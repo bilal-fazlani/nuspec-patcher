@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata>
     <id>TrackerEnabledDbContext</id>
-    <version>8.9.0-beta</version>
+    <version>6.6.4-alpha</version>
     <title>Tracker Enabled DbContext</title>
     <authors>Bilal Fazlani</authors>
     <owners>Bilal Fazlani</owners>
@@ -24,8 +24,8 @@
     </summary>
     <releaseNotes>- Bug fixes
 - New Features
-- Beta Features</releaseNotes>
-    <copyright>2015</copyright>
+- New UI</releaseNotes>
+    <copyright>2019</copyright>
     <tags>SQL Entity Framework Tacking Audit C# Database ASP.NET</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5">

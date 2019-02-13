@@ -6,7 +6,7 @@ namespace NuspecPatcher.Patchers
     {
         private readonly string _version;
 
-        public ReleaseNotesPatcher(string nuspecPath, string version) : base(nuspecPath)
+        public ReleaseNotesPatcher(string version)
         {
             _version = version;
         }
@@ -17,8 +17,8 @@ namespace NuspecPatcher.Patchers
             {
                 throw new PatcherException($"Could not find file './releaseNotes/{_version}.txt'");
             }
-            string fileContents = File.ReadAllText($"./releaseNotes/{_version}.txt");
-            return PatchTag("releaseNotes", fileContents, _nuspecPath);
+            string newReleaseNotes = File.ReadAllText($"./releaseNotes/{_version}.txt");
+            return PatchTag("releaseNotes", newReleaseNotes, value);
         }
     }
 }

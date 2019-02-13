@@ -5,7 +5,7 @@ namespace NuspecPatcher
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             var app = new AppRunner<App>(new AppSettings
             {
@@ -13,7 +13,7 @@ namespace NuspecPatcher
                 EnableVersionOption = false
             });
             
-            app.Run(args);
+            return app.Run(args);
         }
     }
 }

@@ -16,19 +16,20 @@ namespace NuspecPatcher
             [Option(LongName = "copyright", ShortName = "c", Description = "If enabled, overrides the copyright year in nuspec file with current year")]bool copyright = false,
             [Option(LongName = "nuspec-path", Description = "path of nuspec file to be patched")]string nuspecPath = "package.nuspec")
         {
-            if(!File.Exists(nuspecPath)) throw new PatcherException("could not find the nuspec file");
-            
-            var patchers = new List<Patcher> { new VersionPatcher(nuspecPath, version) };
-            
-            if(releaseNotes) patchers.Add(new ReleaseNotesPatcher( nuspecPath, version));
-            
-            if(copyright) patchers.Add(new CopyrightPatcher(nuspecPath));
-
             try
             {
+                if(!File.Exists(nuspecPath)) throw new PatcherException("could not find the nuspec file");
+                
+                var patchers = new List<Patcher> { new VersionPatcher(version) };
+                
+                if(releaseNotes) patchers.Add(new ReleaseNotesPatcher(version));
+                
+                if(copyright) patchers.Add(new CopyrightPatcher());
+
                 string patchedContent = patchers.Aggregate(File.ReadAllText(nuspecPath),
                     (previous, patcher) => patcher.Patch(previous));
                 File.WriteAllText(nuspecPath, patchedContent);
+                Console.WriteLine("file patched successfully");
                 return 0;
             }
             catch (PatcherException err)

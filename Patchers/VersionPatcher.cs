@@ -6,7 +6,7 @@ namespace NuspecPatcher.Patchers
     {
         private readonly string _version;
 
-        public VersionPatcher(string nuspecPath, string version) : base(nuspecPath)
+        public VersionPatcher(string version)
         {
             _version = version;
         }
@@ -19,7 +19,7 @@ namespace NuspecPatcher.Patchers
             }
             else
             {
-                return PatchTag("version", _version, _nuspecPath);
+                return PatchTag("version", _version, value);
             }
         }
     }
