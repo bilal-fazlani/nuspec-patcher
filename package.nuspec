@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata>
+    <id>TrackerEnabledDbContext</id>
+    <version>8.9.0-beta</version>
+    <title>Tracker Enabled DbContext</title>
+    <authors>Bilal Fazlani</authors>
+    <owners>Bilal Fazlani</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/bilal-fazlani/tracker-enabled-dbcontext</projectUrl>
+    <description>
+      Use this to extend Entity Framework functionality to store changes in database. This is very useful for auditing purpose. It stores WHO changed WHAT and WHEN. It will let you choose which tables and columns you want to track with the help of attributes.
+
+      NOTE: TO USE WITH ASP.NET MVC 5 IDENTITY, USE : TrackerEnabledDbContext.Identity
+
+      Click here to get started : http://bilal-fazlani.blogspot.in/2013/09/adding-log-audit-feature-to-entity.html
+    </description>
+    <summary>
+      Use this to extend Entity Framework functionality to store changes in database. This is very useful for auditing purpose. It stores WHO changed WHAT and WHEN. It will let you choose which tables and columns you want to track with the help of attributes.
+
+      NOTE: TO USE WITH ASP.NET MVC 5 IDENTITY, USE : TrackerEnabledDbContext.Identity
+
+      Click here to get started : http://bilal-fazlani.blogspot.in/2013/09/adding-log-audit-feature-to-entity.html
+    </summary>
+    <releaseNotes>- Bug fixes
+- New Features
+- Beta Features</releaseNotes>
+    <copyright>2015</copyright>
+    <tags>SQL Entity Framework Tacking Audit C# Database ASP.NET</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="EntityFramework" version="6.2" />
+        <dependency id="TrackerEnabledDbContext.Common" version="3.7" />
+      </group>
+    </dependencies>
+    <references>
+      <group targetFramework=".NETFramework4.5">
+        <reference file="TrackerEnabledDbContext.dll" />
+      </group>
+    </references>
+  </metadata>
+</package>
